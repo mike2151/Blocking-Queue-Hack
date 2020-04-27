@@ -1,6 +1,6 @@
 namespace BlockingQueue;
 
-require_once("../vendor/autoload.hack");
+require_once(__DIR__."/../vendor/autoload.hack");
 
 use namespace HH\lib\{C, PseudoRandom, Vec};
 use namespace HH\Asio;
@@ -38,7 +38,7 @@ class BlockingQueue<T> {
 
 // used to test implementation
 <<__EntryPoint>>
-async function main_async(): Awaitable<noreturn> {
+function main(): noreturn {
   \Facebook\AutoloadMap\initialize();
   $queue = new BlockingQueue<int>(5);
   while (true) {
@@ -51,5 +51,4 @@ async function main_async(): Awaitable<noreturn> {
     }
   }
   exit(0);
-
 }
